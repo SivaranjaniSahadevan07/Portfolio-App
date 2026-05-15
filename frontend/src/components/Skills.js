@@ -8,7 +8,7 @@ const Skills = () => {
     useEffect(() => {
         const fetchSkills = async () => {
             try {
-                const res = await axios.get('https://blog-backend-k3je.onrender.com/api/portfolio/skills');
+                const res = await axios.get('https://portfolio-app-czol.onrender.com/api/portfolio/skills');
                 setSkills(res.data);
             } catch (error) {
                 console.error("Error fetching skills", error);
