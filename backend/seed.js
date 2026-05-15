@@ -21,12 +21,20 @@ const projects = [
     //     category: 'Frontend'
     // },
     {
-        title: 'Personel Portfolio',
-        description: 'A responsive showcase of my skills and work to tell others about myself.',
-        technologies: ['HTML', 'CSS', 'Bootstrap'],
-        githubLink: 'https://github.com/SivaranjaniSahadevan07/my-portfolio',
-        liveLink: 'https://sivaranjanisahadevan07.github.io/my-portfolio/',
-        category: 'Frontend'
+        title: 'Portfolio Showcase Platform (In Progress) for EsselenTech solutions',
+        description: 'Developed a full-stack responsive portfolio platform with a modern Pinterest-style masonry grid layout and admin dashboard',
+        technologies: ['Next.js', 'React.js', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'Cloudinary'],
+        githubLink: 'https://github.com/SivaranjaniSahadevan07/Esselentech',
+        liveLink: 'https://esselentech.vercel.app/',
+        category: 'Full Stack'
+    },
+    {
+        title: 'Blog APP',
+        description: 'web-based platform designed for creating, publishing, managing, and consuming articles.',
+        technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+        githubLink: 'https://github.com/SivaranjaniSahadevan07/Blog',
+        liveLink: 'https://blog-frontend-woad-alpha.vercel.app/',
+        category: 'Full Stack'
     },
     {
         title: 'Todo App',
@@ -34,14 +42,6 @@ const projects = [
         technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
         githubLink: 'https://github.com/SivaranjaniSahadevan07/Todo_App',
         liveLink: 'https://frontend-nine-virid-46.vercel.app/',
-        category: 'Full Stack'
-    },    
-    {
-        title: 'Blog APP',
-        description: 'web-based platform designed for creating, publishing, managing, and consuming articles.',
-        technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
-        githubLink: 'https://github.com/SivaranjaniSahadevan07/Blog',
-        liveLink: 'https://blog-frontend-woad-alpha.vercel.app/',
         category: 'Full Stack'
     }
 ];
