@@ -50,50 +50,50 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    // <form className="contact-form glass-card animate-up" onSubmit={handleSubmit}>
-                    //     <div className="form-group">
-                    //         <input
-                    //             type="text"
-                    //             name="name"
-                    //             placeholder="Your Name"
-                    //             value={formData.name}
-                    //             onChange={handleChange}
-                    //             required
-                    //         />
-                    //     </div>
-                    //     <div className="form-group">
-                    //         <input
-                    //             type="email"
-                    //             name="email"
-                    //             placeholder="Email Address"
-                    //             value={formData.email}
-                    //             onChange={handleChange}
-                    //             required
-                    //         />
-                    //     </div>
-                    //     <div className="form-group">
-                    //         <input
-                    //             type="text"
-                    //             name="subject"
-                    //             placeholder="Subject"
-                    //             value={formData.subject}
-                    //             onChange={handleChange}
-                    //             required
-                    //         />
-                    //     </div>
-                    //     <div className="form-group">
-                    //         <textarea
-                    //             name="message"
-                    //             placeholder="Your Message"
-                    //             rows="5"
-                    //             value={formData.message}
-                    //             onChange={handleChange}
-                    //             required
-                    //         ></textarea>
-                    //     </div>
-                    //     <button type="submit" className="btn-main">Send Message</button>
-                    //     {status && <p className="status-msg">{status}</p>}
-                    // </form>
+                    <form className="contact-form glass-card animate-up" onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email Address"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="Subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <textarea
+                                name="message"
+                                placeholder="Your Message"
+                                rows="5"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                            ></textarea>
+                        </div>
+                        <button type="submit" className="btn-main">Send Message</button>
+                        {status && <p className="status-msg">{status}</p>}
+                    </form>
                 </div>
             </div>
         </section>
