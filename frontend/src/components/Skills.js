@@ -1,54 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Skills.css';
 
-const Skills = () => {
-    const [skills, setSkills] = useState([]);
+const skillGroups = [
+    {
+        category: 'Frontend',
+        skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap', 'React.js']
+    },
+    {
+        category: 'Backend',
+        skills: ['Node.js', 'Express.js', 'RESTful APIs']
+    },
+    {
+        category: 'Databases',
+        skills: ['MongoDB', 'MySQL', 'SQL']
+    },
+    {
+        category: 'State Management',
+        skills: ['Redux']
+    },
+    {
+        category: 'Tools & Deployment',
+        skills: ['Git', 'GitHub', 'Postman', 'Vercel', 'Render']
+    },
+    {
+        category: 'Core Competencies',
+        skills: ['Responsive Design', 'JWT Authentication', 'API Integration']
+    }
+];
 
-    useEffect(() => {
-        const fetchSkills = async () => {
-            try {
-                const res = await axios.get('https://portfolio-app-czol.onrender.com/api/portfolio/skills');
-                setSkills(res.data);
-            } catch (error) {
-                console.error("Error fetching skills", error);
-            }
-        };
-        fetchSkills();
-    }, []);
-
-    const categories = ['Frontend', 'Backend', 'Database', 'Tools'];
-
-    return (
-        <section id="skills" className="skills-section">
-            <div className="container">
-                <h2 className="section-title">Technical Skills</h2>
-                <div className="skills-container">
-                    {categories.map(cat => (
-                        <div key={cat} className="skill-category-group">
-                            <h3>{cat}</h3>
-                            <div className="skills-grid">
-                                {skills.filter(s => s.category === cat).map(skill => (
-                                    <div key={skill._id} className="skill-item glass-card">
-                                        <div className="skill-info">
-                                            <span>{skill.name}</span>
-                                            <span>{skill.level}%</span>
-                                        </div>
-                                        <div className="skill-bar-bg">
-                                            <div
-                                                className="skill-bar-fill"
-                                                style={{ width: `${skill.level}%` }}
-                                            ></div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+const Skills = () => (
+    <section id="skills" className="skills-section">
+        <div className="container">
+            <h2 className="section-title">Technical Skills</h2>
+            <p className="skills-intro">
+                Technologies and practices I use to build reliable, responsive web applications.
+            </p>
+            <div className="skills-container">
+                {skillGroups.map(({ category, skills }) => (
+                    <section key={category} className="skill-category-group" aria-label={category}>
+                        <h3>{category}</h3>
+                        <ul className="skills-grid">
+                            {skills.map((skill) => (
+                                <li key={skill} className="skill-item">{skill}</li>
+                            ))}
+                        </ul>
+                    </section>
+                ))}
             </div>
-        </section>
-    );
-};
+        </div>
+    </section>
+);
 
 export default Skills;

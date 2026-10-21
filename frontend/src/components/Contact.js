@@ -1,103 +1,34 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Contact.css';
 
-const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-    const [status, setStatus] = useState('');
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-        try {
-            await axios.post('http://localhost:8000/api/portfolio/contact', formData);
-            setStatus('Message sent successfully!');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-        } catch (error) {
-            setStatus('Failed to send message. Please try again.');
-        }
-    };
-
-    return (
-        <section id="contact" className="contact-section">
-            <div className="container">
-                <h2 className="section-title">Get In Touch</h2>
-                <div className="contact-grid">
-                    <div className="contact-info animate-up">
-                        <h3>Let's talk about everything!</h3>
-                        <p>Don't like forms? Send me an email. 👋</p>
-                        <div className="info-item">
-                            <span className="icon">📧</span>
-                            <div>
-                                <h4>Email</h4>
-                                <p>sivaranjanisahadevan@gmail.com</p>
-                            </div>
-                        </div>
-                        <div className="info-item">
-                            <span className="icon">📍</span>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Sivagangai, India.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <form className="contact-form glass-card animate-up" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email Address"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <textarea
-                                name="message"
-                                placeholder="Your Message"
-                                rows="5"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit" className="btn-main">Send Message</button>
-                        {status && <p className="status-msg">{status}</p>}
-                    </form>
+const Contact = () => (
+    <section id="contact" className="contact-section">
+        <div className="container">
+            <div className="contact-layout">
+                <div className="contact-copy">
+                    <p className="contact-eyebrow">Get in touch</p>
+                    <h2>Let's build something <span>useful.</span></h2>
+                    <p className="contact-lead">
+                        For roles, collaborations, or project inquiries, reach out directly by email.
+                    </p>
+                    <a className="contact-email" href="mailto:sivaranjanisahadevan@gmail.com">
+                        <span>sivaranjanisahadevan@gmail.com</span>
+                        <span className="contact-email-icon" aria-hidden="true">&#8599;</span>
+                    </a>
                 </div>
+                <dl className="contact-details">
+                    <div className="contact-detail">
+                        <dt>WhatsApp</dt>
+                        <dd><a href="wa.me/916381983074" target="_blank" rel="noopener noreferrer">Send a message</a></dd>
+                    </div>
+                    <div className="contact-detail">
+                        <dt>Location</dt>
+                        <dd>Sivagangai, India</dd>
+                    </div>
+                </dl>
             </div>
-        </section>
-    );
-};
+        </div>
+    </section>
+);
 
 export default Contact;
