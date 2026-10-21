@@ -6,18 +6,19 @@
 .contact-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.6fr);
-    gap: 4rem;
+    gap: 2.5rem;
     align-items: center;
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
     border-top: 1px solid var(--border);
 }
 
 .contact-copy {
+    min-width: 0;
     max-width: 720px;
 }
 
 .contact-eyebrow {
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     color: var(--secondary);
     font-size: 0.85rem;
     font-weight: 700;
@@ -26,7 +27,7 @@
 
 .contact-copy h2 {
     max-width: 650px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.9rem;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.08;
 }
@@ -37,7 +38,7 @@
 
 .contact-lead {
     max-width: 520px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--text-muted);
     font-size: 1.05rem;
 }
@@ -55,9 +56,27 @@
     overflow-wrap: anywhere;
 }
 
+.contact-icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-right: 0.4rem;
+    font-size: 1rem;
+    vertical-align: -0.12em;
+}
+
+.contact-icon-email {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
 .contact-email:hover,
 .contact-email:focus-visible {
     color: var(--secondary);
+}
+
+.contact-email span:first-of-type {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .contact-email-icon {
@@ -68,7 +87,7 @@
 
 .contact-details {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.1rem;
     margin: 0;
     padding: 0 0 0 2rem;
     border-left: 1px solid var(--border);
@@ -80,6 +99,28 @@
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.contact-detail .contact-label-whatsapp {
+    color: #4ade80;
+}
+
+.contact-detail .contact-label-location {
+    color: #fb923c;
+}
+
+.contact-label-whatsapp,
+.contact-label-location {
+    display: flex;
+    align-items: center;
+}
+
+.contact-label-whatsapp .contact-icon {
+    color: #4ade80;
+}
+
+.contact-label-location .contact-icon {
+    color: #fb923c;
 }
 
 .contact-detail dd {
@@ -96,8 +137,8 @@
 @media (max-width: 760px) {
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
-        padding: 2.5rem 0;
+        gap: 1.75rem;
+        padding: 2rem 0;
     }
 
     .contact-details {

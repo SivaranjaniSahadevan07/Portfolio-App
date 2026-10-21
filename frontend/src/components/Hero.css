@@ -1,6 +1,7 @@
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    overflow-x: clip;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     padding-top: 100px;
@@ -8,12 +9,14 @@
 
 .hero-section .container {
     display: grid;
+    min-width: 0;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
 }
 
 .hero-content {
+    min-width: 0;
     max-width: 590px;
 }
 
@@ -93,7 +96,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 540px;
+    min-height: 500px;
     isolation: isolate;
 }
 
@@ -167,8 +170,8 @@
     }
 
     .hero-visual {
-        margin-top: 3rem;
-        min-height: 480px;
+        margin-top: 2rem;
+        min-height: 430px;
     }
 
     .hero-content {
@@ -182,24 +185,63 @@
 }
 
 @media (max-width: 600px) {
-    .hero-visual {
-        min-height: 390px;
+    .hero-section {
+        min-height: 0;
+        padding: 6rem 0 1.5rem;
     }
 
-    .hero-portrait-frame {
-        inset: 0 2% 0;
+    .hero-section .container {
+        gap: 0.5rem;
     }
 
-    .hero-portrait-frame::before {
-        right: 2%;
-        width: 90%;
+    .hero-greeting {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .hero-name {
+        margin-bottom: 0.85rem;
+        font-size: clamp(2.65rem, 11vw, 3.2rem);
+        line-height: 1.04;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-desc {
+        max-width: 32rem;
+        margin: 0 auto 1.25rem;
+        font-size: 0.98rem;
+        line-height: 1.55;
     }
 
     .hero-btns {
-        gap: 0.75rem;
+        flex-direction: column;
+        gap: 0.65rem;
     }
 
     .hero-btns a {
-        padding: 0.85rem 1rem;
+        width: min(100%, 17.5rem);
+        min-height: 2.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .hero-visual {
+        min-height: 260px;
+        margin-top: 0.75rem;
+    }
+
+    .hero-bg-glow {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 360px;
+    }
+
+    .hero-portrait-frame {
+        inset: 0 5% 0;
+    }
+
+    .hero-portrait-frame::before {
+        right: 4%;
+        width: 88%;
     }
 }

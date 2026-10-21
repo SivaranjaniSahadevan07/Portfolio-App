@@ -6,7 +6,7 @@ const projects = [
         title: 'Training & Placement Platform',
         organization: 'The Nexify',
         description: 'A career-focused platform for IT courses, learning pathways, and placement support.',
-        technologies: [],
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'Lucid React', 'Framer Motion', 'SMTP Email'],
         links: [
             { label: 'Live site', url: 'https://edtech.thenexify.in/' }
         ]
@@ -14,7 +14,7 @@ const projects = [
     {
         title: 'Blog Platform',
         description: 'Full-stack publishing with role-based access, JWT authentication, search, filters, and comments.',
-        technologies: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB'],
+        technologies: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB', 'JWT Authentication', 'RESTful APIs', 'Rate Limiting'],
         links: [
             { label: 'GitHub', url: 'https://github.com/SivaranjaniSahadevan07/Blog' },
             { label: 'Live site', url: 'https://blog-frontend-woad-alpha.vercel.app/' }
@@ -35,9 +35,7 @@ const projects = [
         status: 'In progress',
         description: 'Responsive portfolio platform with a Pinterest-style masonry grid and admin dashboard.',
         technologies: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'Cloudinary'],
-        links: [
-            { label: 'Live site', url: 'https://esselentech.vercel.app/' }
-        ]
+        links: []
     },
     {
         title: 'Notes Sharing Platform',
@@ -57,7 +55,9 @@ const Projects = () => (
                     <article className="project-card" key={project.title}>
                         <div className="project-heading">
                             <span className="project-number">0{index + 1}</span>
-                            {project.status && <span className="project-status">{project.status}</span>}
+                            <span className={`project-status ${project.status ? 'in-progress' : 'completed'}`}>
+                                {project.status || 'Completed'}
+                            </span>
                         </div>
                         {project.organization && <p className="project-organization">{project.organization}</p>}
                         <h3>{project.title}</h3>
