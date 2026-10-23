@@ -5,13 +5,7 @@
     width: 100%;
     z-index: 1000;
     padding: 1.1rem 0;
-    transition: var(--transition);
-}
-
-.navbar.scrolled {
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 0.75rem 0;
+    background: rgba(15, 23, 42, 0.97);
     border-bottom: 1px solid var(--border);
 }
 
@@ -85,11 +79,8 @@
 }
 
 @media (max-width: 900px) {
-    .navbar,
-    .navbar.scrolled {
+    .navbar {
         padding: 0.65rem 0;
-        background: rgba(15, 23, 42, 0.94);
-        backdrop-filter: blur(10px);
     }
 
     .navbar.menu-open {

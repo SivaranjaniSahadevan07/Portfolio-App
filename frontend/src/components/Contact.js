@@ -26,7 +26,7 @@ const Contact = () => (
                             WhatsApp
                         </dt>
                         <dd>
-                            <a href="wa.me/916381983074" target="_blank" rel="noopener noreferrer">Send a message</a>
+                            <a href="https://api.whatsapp.com/send/?phone=916381983074&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Send a message</a>
                         </dd>
                     </div>
                     <div className="contact-detail">

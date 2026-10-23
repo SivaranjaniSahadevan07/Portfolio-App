@@ -31,6 +31,17 @@ body {
   overflow-x: clip;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
